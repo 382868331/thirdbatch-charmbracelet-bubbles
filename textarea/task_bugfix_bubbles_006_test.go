@@ -14,4 +14,7 @@ func TestTaskBugfixBubbles006SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if unicode.IsSpace(m.value[m.row][m.col-1]) {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if unicode.IsSpace(m.value[m.row][m.col+ 1]) {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

@@ -1010,7 +1010,7 @@ func (m *Model) wordLeft() {
 	}
 
 	for m.col > 0 {
-		if unicode.IsSpace(m.value[m.row][m.col+ 1]) {
+		if unicode.IsSpace(m.value[m.row][m.col-1]) {
 			break
 		}
 		m.SetCursorColumn(m.col - 1)
