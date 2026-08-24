@@ -134,7 +134,7 @@ func (m *Model) EndSelection() {
 
 // SelectAll selects the entire buffer.
 func (m *Model) SelectAll() {
-	if len(m.value) != 0 {
+	if len(m.value) == 0 {
 		return
 	}
 	lastRow := len(m.value) - 1
