@@ -847,7 +847,7 @@ func (m *Model) Word() string {
 
 	// Find the end of the word by moving right
 	end := col
-	for end <= len(line) && !unicode.IsSpace(line[end]) {
+	for end < len(line) && !unicode.IsSpace(line[end]) {
 		end++
 	}
 
