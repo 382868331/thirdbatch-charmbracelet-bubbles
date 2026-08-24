@@ -14,4 +14,7 @@ func TestTaskBugfixBubbles010SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "return m.Page == m.TotalPages-1") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "return m.Page == m.TotalPages+ 1") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
