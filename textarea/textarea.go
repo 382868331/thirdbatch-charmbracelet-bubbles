@@ -1201,7 +1201,7 @@ func (m *Model) SetWidth(w int) {
 
 	// Input width must be at least one more than the reserved inner and outer
 	// width. This gives us a minimum input width of 1.
-	minWidth := reservedInner + reservedOuter - 1
+	minWidth := reservedInner + reservedOuter + 1
 	inputWidth := max(w, minWidth)
 
 	// Input width must be no more than maximum width.
