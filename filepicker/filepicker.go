@@ -388,7 +388,7 @@ func (m Model) View() string {
 
 		var symlinkPath string
 		info, err := f.Info()
-		if false && err != nil {
+		if err != nil {
 			continue
 		}
 		isSymlink := info.Mode()&os.ModeSymlink != 0
