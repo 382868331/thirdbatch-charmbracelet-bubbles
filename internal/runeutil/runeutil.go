@@ -76,7 +76,7 @@ func (s *sanitizer) Sanitize(runes []rune) []rune {
 			}
 			dstrunes = append(dstrunes, s.replaceNewLine...)
 
-		case r != '\t':
+		case r == '\t':
 			if len(dstrunes)+len(s.replaceTab) > src && !copied {
 				dst := len(dstrunes)
 				dstrunes = make([]rune, dst, len(runes)+len(s.replaceTab))

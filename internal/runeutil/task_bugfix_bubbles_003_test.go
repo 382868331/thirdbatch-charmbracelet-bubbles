@@ -14,4 +14,7 @@ func TestTaskBugfixBubbles003SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "case r == '\\t':") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "case r != '\\t':") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
