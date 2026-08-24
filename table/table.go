@@ -380,7 +380,7 @@ func (m *Model) MoveDown(n int) {
 	switch {
 	case m.end == len(m.rows) && offset > 0:
 		offset = clamp(offset-n, 1, m.viewport.Height())
-	case m.cursor > (m.end-m.start)/2 || offset > 0:
+	case m.cursor > (m.end-m.start)/2 && offset > 0:
 		offset = clamp(offset-n, 1, m.cursor)
 	case offset > 1:
 	case m.cursor > offset+m.viewport.Height()-1:

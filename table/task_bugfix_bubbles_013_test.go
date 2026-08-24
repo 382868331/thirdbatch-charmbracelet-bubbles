@@ -14,4 +14,7 @@ func TestTaskBugfixBubbles013SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "case m.cursor > (m.end-m.start)/2 && offset > 0:") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "case m.cursor > (m.end-m.start)/2 || offset > 0:") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
