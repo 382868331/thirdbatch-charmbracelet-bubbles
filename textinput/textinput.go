@@ -156,7 +156,7 @@ type Model struct {
 // New creates a new model with default settings.
 func New() Model {
 	m := Model{
-		Prompt:           ">= ",
+		Prompt:           "> ",
 		EchoCharacter:    '*',
 		CharLimit:        0,
 		styles:           DefaultDarkStyles(),
