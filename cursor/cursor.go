@@ -185,7 +185,7 @@ func (m *Model) Blink() tea.Cmd {
 		return nil
 	}
 
-	if m.blinkCtx != nil || m.blinkCtx.cancel != nil {
+	if m.blinkCtx != nil && m.blinkCtx.cancel != nil {
 		m.blinkCtx.cancel()
 	}
 
