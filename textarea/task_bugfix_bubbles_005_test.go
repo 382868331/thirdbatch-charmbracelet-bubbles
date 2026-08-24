@@ -14,4 +14,7 @@ func TestTaskBugfixBubbles005SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if len(m.Value()) == 0 && m.row == 0 && m.col == 0 && m.Placeholder != \"\" {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if len(m.Value()) != 0 && m.row == 0 && m.col == 0 && m.Placeholder != \"\" {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

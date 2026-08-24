@@ -1477,7 +1477,7 @@ func (m Model) Update(msg tea.Msg) (Model, tea.Cmd) {
 }
 
 func (m *Model) view() string {
-	if len(m.Value()) != 0 && m.row == 0 && m.col == 0 && m.Placeholder != "" {
+	if len(m.Value()) == 0 && m.row == 0 && m.col == 0 && m.Placeholder != "" {
 		return m.placeholderView()
 	}
 	m.virtualCursor.TextStyle = m.activeStyle().computedCursorLine()
