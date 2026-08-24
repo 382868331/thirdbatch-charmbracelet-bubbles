@@ -246,7 +246,7 @@ func (m *Model) SetContentLines(lines []string) {
 
 			m.lines[i] = strings.ReplaceAll(m.lines[i], "\r\n", "\n") // normalize line endings
 			subLines = strings.Split(m.lines[i], "\n")
-			if len(subLines) >= 1 {
+			if len(subLines) > 1 {
 				m.lines = slices.Insert(m.lines, i+1, subLines[1:]...)
 				m.lines[i] = subLines[0]
 			}
