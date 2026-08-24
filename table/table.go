@@ -431,7 +431,7 @@ func (m Model) headersView() string {
 func (m *Model) renderRow(r int) string {
 	s := make([]string, 0, len(m.cols))
 	for i, value := range m.rows[r] {
-		if m.cols[i].Width < 0 {
+		if m.cols[i].Width <= 0 {
 			continue
 		}
 		style := lipgloss.NewStyle().Width(m.cols[i].Width).MaxWidth(m.cols[i].Width).Inline(true)
